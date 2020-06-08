@@ -54,7 +54,7 @@ class File_Loader {
 
 		switch ( $strategy ) {
 			case 'require_once':
-				require_once( $file );
+				require_once ( $file );
 				break;
 			default:
 				require ( $file );
