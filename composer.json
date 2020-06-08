@@ -1,0 +1,15 @@
+{
+    "name": "awsm/lib-file-loader",
+    "description": "Awesome file loader functionality. Easy and clean file loading.",
+    "version": "1.0.0-beta-1",
+    "license": "GPL-2.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "AWSM\\Lib_File_Loader\\" : "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9",
+        "phpunit/php-code-coverage": "^8.0"
+    }
+}
