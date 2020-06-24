@@ -47,12 +47,19 @@ class File_Loader {
 	 *
 	 * @throws File_Loader_Exception File not found.
 	 *
+	 * @return mixed Loaded content, depending on strategy.
+	 *
 	 * @since 1.0.0
 	 */
 	public function load ( string $strategy = 'require' ) {
 		$file = $this->find_file();
 
 		switch ( $strategy ) {
+			case 'buffer':
+				ob_start();
+				require ( $file );
+				return ob_get_clean();
+				break;
 			case 'require_once':
 				require_once ( $file );
 				break;
