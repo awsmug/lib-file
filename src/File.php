@@ -30,6 +30,8 @@ class File {
      * 
      * @param string $file File to load.
      * 
+     * @return File
+     * 
      * @since 1.0.0
      */
     public static function load( string $file ) : File {
@@ -45,6 +47,8 @@ class File {
      * 
      * @param string $file File to create.
      * 
+     * @return File
+     * 
      * @since 1.0.0
      */
     public static function create( string $file ) : File {
@@ -53,6 +57,19 @@ class File {
         }
 
         return new self( $file );
+    }
+
+    /**
+     * Deletes file.
+     * 
+     * @param string $file File to delete.
+     * 
+     * @return bool True if file was deleted, false if not.
+     * 
+     * @since 1.0.0
+     */
+    public static function delete( string $file ) {
+        return unlink( $file );
     }
 
     /**
@@ -92,7 +109,29 @@ class File {
      * @since 1.0.0
      */
     public function path() {
+        return realpath( $this->file );
+    }
+
+    /**
+     * Directory of file.
+     * 
+     * @return string File directory.
+     * 
+     * @since 1.0.0
+     */
+    public function dir() {
         return dirname( realpath( $this->file ) );
+    }
+
+    /**
+     * Name of file.
+     * 
+     * @return string File name.
+     * 
+     * @since 1.0.0
+     */
+    public function name() {
+        return basename( $this->file );
     }
 
     /**
