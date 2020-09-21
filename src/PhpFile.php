@@ -9,13 +9,13 @@ namespace AWSM\LibFile;
  */
 class PhpFile extends File {
     /**
-     * Load file.
+     * Set file.
      * 
      * @return PhpFile 
      * 
      * @since 1.0.0
      */
-    public static function load( string $file ) : PhpFile {
+    public static function set( string $file ) : PhpFile {
         if( ! file_exists( $file ) ) {
             throw new FileException( 'File does not exist' );
         }

@@ -26,7 +26,7 @@ class File {
     }
 
     /**
-     * Load file.
+     * Set file.
      * 
      * @param string $file File to load.
      * 
