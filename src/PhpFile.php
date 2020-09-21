@@ -32,31 +32,37 @@ class PhpFile extends FileBase {
     /**
      * Running php script.
      * 
+     * @param array $variables Variables to pass to script.
+     * 
      * @since 1.0.0
      */
-    public function run() {
+    public function run( array $variables = [] ) {
         require( $this->file );
     }
 
     /**
      * Running php sripte once.
      * 
+     * @param array $variables Variables to pass to script.
+     * 
      * @since 1.0.0
      */
-    public function runOnce() {
+    public function runOnce( array $variables = [] ) {
         require_once( $this->file );
     }
 
     /**
      * Runs php and buffers output.
      * 
+     * @param array $variables Variables to pass to script.
+     * 
      * @return string Php script output.
      * 
      * @since 1.0.0
      */
-    public function runAndBufferOutput() : string {
+    public function runAndBufferOutput( array $variables = []  ) : string {
         ob_start();
-        $this->run();
+        $this->run( $variables );
         return ob_get_clean();
     }
 }
