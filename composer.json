@@ -1,11 +1,11 @@
 {
-    "name": "awsm/lib-file-loader",
-    "description": "Awesome file loader functionality. Easy and clean file loading.",
+    "name": "awsm/lib-file",
+    "description": "Awesome file functionality.",
     "version": "1.0.0-beta-1",
     "license": "GPL-2.0-or-later",
     "autoload": {
         "psr-4": {
-            "AWSM\\Lib_File_Loader\\" : "src/"
+            "AWSM\\LibFile\\" : "src/"
         }
     },
     "require-dev": {

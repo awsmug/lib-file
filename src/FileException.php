@@ -1,6 +1,6 @@
 <?php
 
-namespace AWSM\Lib_File_Loader;
+namespace AWSM\LibFile;
 
 /**
  * Class File_Loader_Exception.
@@ -9,5 +9,5 @@ namespace AWSM\Lib_File_Loader;
  *
  * @since 1.0.0
  */
-class File_Loader_Exception extends \Exception {
+class FileException extends \Exception {
 }
