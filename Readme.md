@@ -1,6 +1,6 @@
-# Awesome file loader
+# Awesome file lib
 
-Awesome file loader functionality. Easy and clean file loading.
+Awesome file functionality.
 
 ![](https://github.com/awsmug/lib-file-loader/workflows/PHPUnit/badge.svg)
 
