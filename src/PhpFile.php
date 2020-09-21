@@ -7,7 +7,7 @@ namespace AWSM\LibFile;
  * 
  * @since 1.0.0
  */
-class PhpFile extends File {
+class PhpFile extends FileBase {
     /**
      * Set file.
      * 
