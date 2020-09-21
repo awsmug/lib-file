@@ -34,7 +34,7 @@ class File {
      * 
      * @since 1.0.0
      */
-    public static function load( string $file ) : File {
+    public static function set( string $file ) : File {
         if( ! file_exists( $file ) ) {
             throw new FileException( 'File does not exist' );
         }
@@ -68,8 +68,8 @@ class File {
      * 
      * @since 1.0.0
      */
-    public static function delete( string $file ) {
-        return unlink( $file );
+    public function delete() {
+        return unlink( $this->file );
     }
 
     /**

@@ -8,18 +8,17 @@ final class FileTest extends TestCase {
 	public function testCreate(): void {
 		$testfile = 'testfile.txt';
 
-		$file = File::create( $testfile );
-		$this->assertInstanceOf('AWSM\LibFile\File', $file);
+		File::create( $testfile );
 		$this->assertTrue( file_exists( $testfile ) );
-		File::delete( $testfile );
+		File::set($testfile)->delete();
 	}
 
 	public function testPath() {
 		$testfile = 'testfile.txt';
 
 		File::create( $testfile );
-		$value = File::load( $testfile )->path();
-		File::delete( $testfile );
+		$value = File::set( $testfile )->path();
+		File::set( $testfile )->delete();
 
 		$this->assertEquals( $value, dirname( dirname( __FILE__ ) ) . '/' . $testfile );
 	}
@@ -28,8 +27,8 @@ final class FileTest extends TestCase {
 		$testfile = 'testfile.txt';
 
 		File::create( $testfile );
-		$value = File::load( $testfile )->dir();
-		File::delete( $testfile );
+		$value = File::set( $testfile )->dir();
+		File::set($testfile)->delete();
 
 		$this->assertEquals( $value, dirname( dirname( __FILE__ ) ) );
 	}
@@ -38,8 +37,8 @@ final class FileTest extends TestCase {
 		$testfile = 'testfile.txt';
 
 		File::create( $testfile );
-		$path = File::load( $testfile )->name();
-		File::delete( $testfile );
+		$path = File::set( $testfile )->name();
+		File::set($testfile)->delete();
 
 		$this->assertEquals( $path, $testfile );
 	}

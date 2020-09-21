@@ -61,7 +61,7 @@ class FileFinder {
             $file = $path . '/' . $this->filename;
 
             if( file_exists( $file ) ) {
-                return new File( $file );
+                return File::set( $file );
             }
         }
     }
@@ -80,7 +80,7 @@ class FileFinder {
             $file = $path . '/' . $this->filename;
 
             if( file_exists( $file ) ) {
-                $foundFiles[] = new File( $file) ;
+                $foundFiles[] = File::set( $file ) ;
             }
         }
 
