@@ -11,9 +11,11 @@ class PhpFile extends File {
     /**
      * Load file.
      * 
+     * @return PhpFile 
+     * 
      * @since 1.0.0
      */
-    public static function load( string $file ) : File {
+    public static function load( string $file ) : PhpFile {
         if( ! file_exists( $file ) ) {
             throw new FileException( 'File does not exist' );
         }
