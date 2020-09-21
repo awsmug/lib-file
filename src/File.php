@@ -85,6 +85,17 @@ class File {
     }
 
     /**
+     * Path of file.
+     * 
+     * @return string File path.
+     * 
+     * @since 1.0.0
+     */
+    public function path() {
+        return dirname( realpath( $this->file ) );
+    }
+
+    /**
      * Mime type.
      * 
      * @return string Mime type.
