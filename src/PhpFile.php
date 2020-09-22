@@ -15,7 +15,7 @@ class PhpFile extends FileBase {
      * 
      * @since 1.0.0
      */
-    public static function set( string $file ) : PhpFile {
+    public static function use( string $file ) : PhpFile {
         if( ! file_exists( $file ) ) {
             throw new FileException( 'File does not exist' );
         }

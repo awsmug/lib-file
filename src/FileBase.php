@@ -26,7 +26,7 @@ abstract class FileBase {
     }
 
     /**
-     * Set file.
+     * Set file to use.
      * 
      * @param string $file File to load.
      * 
@@ -34,7 +34,7 @@ abstract class FileBase {
      * 
      * @since 1.0.0
      */
-    public static function set( string $file ) {
+    public static function use( string $file ) {
         if( ! file_exists( $file ) ) {
             throw new FileException( 'File does not exist' );
         }

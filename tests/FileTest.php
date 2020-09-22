@@ -10,15 +10,15 @@ final class FileTest extends TestCase {
 
 		File::create( $testfile );
 		$this->assertTrue( file_exists( $testfile ) );
-		File::set($testfile)->delete();
+		File::use($testfile)->delete();
 	}
 
 	public function testPath() {
 		$testfile = 'testfile.txt';
 
 		File::create( $testfile );
-		$value = File::set( $testfile )->path();
-		File::set( $testfile )->delete();
+		$value = File::use( $testfile )->path();
+		File::use( $testfile )->delete();
 
 		$this->assertEquals( $value, dirname( dirname( __FILE__ ) ) . '/' . $testfile );
 	}
@@ -27,8 +27,8 @@ final class FileTest extends TestCase {
 		$testfile = 'testfile.txt';
 
 		File::create( $testfile );
-		$value = File::set( $testfile )->dir();
-		File::set($testfile)->delete();
+		$value = File::use( $testfile )->dir();
+		File::use($testfile)->delete();
 
 		$this->assertEquals( $value, dirname( dirname( __FILE__ ) ) );
 	}
@@ -37,8 +37,8 @@ final class FileTest extends TestCase {
 		$testfile = 'testfile.txt';
 
 		File::create( $testfile );
-		$path = File::set( $testfile )->name();
-		File::set($testfile)->delete();
+		$path = File::use( $testfile )->name();
+		File::use($testfile)->delete();
 
 		$this->assertEquals( $path, $testfile );
 	}

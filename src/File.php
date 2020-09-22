@@ -26,7 +26,7 @@ class File extends FileBase {
      * 
      * @since 1.0.0
      */
-    public static function set( string $file ) : File {
-        return parent::set( $file );
+    public static function use( string $file ) : File {
+        return parent::use( $file );
     }
 }
