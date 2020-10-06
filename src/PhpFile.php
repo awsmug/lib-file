@@ -17,13 +17,13 @@ class PhpFile extends FileBase {
      */
     public static function use( string $file ) : PhpFile {
         if( ! file_exists( $file ) ) {
-            throw new FileException( 'File does not exist' );
+            throw new FileException( sprintf( 'File "%s" does not exist', $file ) );
         }
 
         $file = new self( $file );
 
         if( $file->extension() !== 'php' ) {
-            throw new FileException( 'File is no PHP file' );
+            throw new FileException( sprintf( 'File "%s" is no PHP file', $file ) );
         }
 
         return $file;
