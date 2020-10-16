@@ -36,7 +36,7 @@ abstract class FileBase {
      */
     public static function use( string $file ) {
         if( ! file_exists( $file ) ) {
-            throw new FileException( 'File does not exist' );
+            throw new FileException( sprintf( 'File "&s" does not exist', $file ) );
         }
 
         $class = get_called_class();
